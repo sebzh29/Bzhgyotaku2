@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur de paiement - Breizh Gyotaku{% endblock %}
+
+{% block content %}
+    <h2>Erreur de paiement</h2>
+    <p>
+        Bonjour <strong>{{ order.user.firstname }} {{ order.user.lastname }}</strong>,<br/><br/>
+        Il semblerait que votre paiement ai échoué pour commande n°<strong>{{ order.reference }}</strong>.<br/>
+        Une confirmation d'erreur vient de vous être envoyéepar email à l'adresse <strong>{{ order.user.email }}</strong>.
+    </p>
+    <br/>       
+        
+    
+    <a href="{{ path('order') }}" class="btn btn-success">Réessayer le paiement</a>.
+    
+    {# {{ dump(order) }} #}
+{% endblock %}

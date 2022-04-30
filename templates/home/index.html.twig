@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block carousel %}{% endblock %}
+
+{% block content %}
+  <!-- Three columns of text below the carousel -->
+        <h3>Nos oeuvres les plus visitées</h3>
+        <p>Découvrez une selection d'oeuvres les plus visitées</p>
+        <div class="row">
+            {% for product in products %}
+                <div class="col-md-3">
+                    {% include 'product/single_product.html.twig' %}
+                </div>
+            {% endfor %}
+        </div><!-- /.row -->
+
+
+         <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Une tradition<span class="text-muted"> halieutique.</span></h2>
+                <p class="lead"><br/>L'histoire se déroule en 1862.<br/>Le seigneur Sakai, occupé à pêcher avec ses samouraïs, remonte une dorade grise.<br/>Ce poisson symbolise pour les japonais le bonheur. Un des guerriers eût alors l'idée de capturer la beauté et l'âme de la prise pour partager ce trophée avec le Mikado.<br/>Pour se faire, il enduisit la dorade d'encre et pris son empreinte sur du papier washi.</p>
+            </div>
+            <div class="col-md-5">
+                <img src="{{ asset('assets/img/first.jpg') }}" class="img-fluid" alt="Un savoir-faire ancestral">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading">Venez nous découvrir dans nos <span class="text-muted">différentes expositions.</span></h2>
+                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img src="{{ asset('assets/img/second.jpg') }}" class="img-fluid" alt="Expositions">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+
+{% endblock %}
